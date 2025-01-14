@@ -1,0 +1,2343 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/api//sexnovel/chapte/list": {
+            "get": {
+                "tags": [
+                    "小说"
+                ],
+                "summary": "小说章节列表",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "pid",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "title",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/adclick": {
+            "get": {
+                "description": "提交广告的点击数量",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "广告"
+                ],
+                "summary": "提交统计",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "广告ID",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/ads": {
+            "get": {
+                "description": "返回广告列表数据",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "广告"
+                ],
+                "summary": "广告列表",
+                "responses": {}
+            }
+        },
+        "/api/blog/comment/add": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "summary": "发布评论",
+                "responses": {}
+            }
+        },
+        "/api/blog/comment/list": {
+            "get": {
+                "summary": "获取视频评论",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "appid",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "blog_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "ip",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "parent_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "seximg_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "type",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "userid",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "vlog_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "vod_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/blog/info": {
+            "get": {
+                "description": "返回图文详情数据",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "图文"
+                ],
+                "summary": "图文详情",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "视频ID",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/cdnhost": {
+            "get": {
+                "description": "- 注意不要配置敏感信息",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "配置"
+                ],
+                "summary": "cdn加速域名配置",
+                "responses": {}
+            }
+        },
+        "/api/seximg/info": {
+            "get": {
+                "description": "返回色图详情数据",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "色图"
+                ],
+                "summary": "色图详情",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "色图详情的id",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/seximg/list": {
+            "get": {
+                "tags": [
+                    "色图"
+                ],
+                "summary": "色图列表",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "name": "after_create_time",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "appId",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "time",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "title",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "top",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "typeid",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "wd",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/seximgtype/list": {
+            "get": {
+                "tags": [
+                    "色图"
+                ],
+                "summary": "色图分类列表",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/sexnovel/content/info": {
+            "get": {
+                "description": "返回小说内容数据",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "小说"
+                ],
+                "summary": "小说内容",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "小说内容的章节id",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/sexnovel/info": {
+            "get": {
+                "description": "返回小说详情数据",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "小说"
+                ],
+                "summary": "小说详情",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "小说详情的id",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/sexnovel/label": {
+            "get": {
+                "description": "返回推荐的标签列表",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "小说"
+                ],
+                "summary": "小说推荐",
+                "responses": {}
+            }
+        },
+        "/api/sexnovel/list": {
+            "get": {
+                "tags": [
+                    "小说"
+                ],
+                "summary": "小说列表",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "appId",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "labelsId",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "title",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "top",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "typeid",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/sexnoveltype/list": {
+            "get": {
+                "tags": [
+                    "小说"
+                ],
+                "summary": "小说分类列表",
+                "responses": {}
+            }
+        },
+        "/api/suggest/add": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "- 用户提交建议",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "用户提交建议",
+                "parameters": [
+                    {
+                        "description": "suggest",
+                        "name": "suggest",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/actor": {
+            "get": {
+                "description": "返回用户信息",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "女优列表",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "denycomment",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "ip",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "name",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "phone",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "type",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/blog/star/add": {
+            "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "创建视频播放记录，单用户与单视频唯一。",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "图文"
+                ],
+                "summary": "创建收藏记录",
+                "parameters": [
+                    {
+                        "description": "参数列表",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.UserBlogStarAddRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/blog/star/delete": {
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "创建视频播放记录，单用户与单视频唯一。",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "图文"
+                ],
+                "summary": "删除收藏列表",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "删除播放历史的id",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "删除收藏的 blog id",
+                        "name": "blog_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/blog/star/list": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "获取某个用户的点赞记录",
+                "consumes": [
+                    "application/json"
+                ],
+                "summary": "获取点赞记录",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "type",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/edit": {
+            "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "- 修改用户信息",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "修改用户",
+                "parameters": [
+                    {
+                        "description": "参数列表",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.UserEditRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/follow": {
+            "get": {
+                "description": "返回用户信息",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "我关注的，关注我的用户列表",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "我关注的用户",
+                        "name": "follow_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "关注我的用户",
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/follow/add": {
+            "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "关注其他用户",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "关注其他用户",
+                "parameters": [
+                    {
+                        "description": "参数列表",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.UserFollowAddRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/follow/delete": {
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "返回用户信息",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "用户列表",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "参数列表",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/info": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "- 用户详细信息",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "用户详情",
+                "responses": {}
+            }
+        },
+        "/api/user/list": {
+            "get": {
+                "description": "返回用户信息",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "搜索用户列表",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "denycomment",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "ip",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "name",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "phone",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "type",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/login": {
+            "post": {
+                "description": "- 用户登录",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "用户登录",
+                "parameters": [
+                    {
+                        "description": "参数列表",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.UserLoginRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/newusershare": {
+            "get": {
+                "description": "添加用户分享记录",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "添加用户分享记录"
+                ],
+                "summary": "添加用户分享记录",
+                "responses": {}
+            }
+        },
+        "/api/user/other": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "- 查看其他的用户详细信息 - 可以登录也可以不登陆",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "其他用户详情",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "参数列表",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/register": {
+            "post": {
+                "description": "- 注册用户信息",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "注册用户",
+                "responses": {}
+            }
+        },
+        "/api/user/resetpasswd": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "重设密码",
+                "parameters": [
+                    {
+                        "description": "参数列表",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.UserRegisterRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/seximg/star/add": {
+            "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "创建点赞收藏记录",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "色图"
+                ],
+                "summary": "创建点赞收藏记录",
+                "parameters": [
+                    {
+                        "description": "参数列表",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.UserSeximgStarAddRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/seximg/star/delete": {
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "删除点赞收藏记录，单用户与单色图唯一。",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "色图"
+                ],
+                "summary": "删除点赞收藏列表",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "删除点赞收藏的 seximg id",
+                        "name": "seximg_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/seximg/star/isLike": {
+            "get": {
+                "description": "返回isLike",
+                "tags": [
+                    "色图"
+                ],
+                "summary": "是否点赞收藏",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "色图的id",
+                        "name": "seximg_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/seximg/star/list": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "获取某个用户的点赞收藏记录",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "色图"
+                ],
+                "summary": "获取点赞收藏记录",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "type",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/sexnovel/history/add": {
+            "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "创建小说观看记录，单用户与单小说唯一。",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "小说"
+                ],
+                "summary": "创建小说观看记录",
+                "parameters": [
+                    {
+                        "description": "参数列表",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.UserSexnovelHistroyAddRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/sexnovel/history/delete": {
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "删除小说观看记录 id 为观看记录id:'1,2,3' id=0 则为 删除所有",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "小说"
+                ],
+                "summary": "删除小说观看记录",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "删除观看历史的id",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/sexnovel/history/list": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "创建小说观看记录，单用户与单小说唯一。",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "小说"
+                ],
+                "summary": "获取小说观看记录",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/sexnovel/star/add": {
+            "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "创建点赞收藏记录",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "小说"
+                ],
+                "summary": "创建点赞收藏记录",
+                "parameters": [
+                    {
+                        "description": "参数列表",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.UserSexnovelStarAddRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/sexnovel/star/delete": {
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "创建小说点赞收藏记录，单用户与单小说唯一。",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "小说"
+                ],
+                "summary": "删除点赞收藏列表",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "删除点赞收藏的 sexnovel id",
+                        "name": "sexnovel_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/sexnovel/star/isLike": {
+            "get": {
+                "description": "返回isLike",
+                "tags": [
+                    "小说"
+                ],
+                "summary": "是否点赞收藏",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "小说的id",
+                        "name": "sexnovel_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/sexnovel/star/list": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "获取某个用户的点赞收藏记录",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "小说"
+                ],
+                "summary": "获取点赞收藏记录",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "type",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/share": {
+            "get": {
+                "description": "我的邀请列表或邀请的设备列表",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "老版本分享 已过期 不处理 不可删除",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            },
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "- 提交成功邀请消息 邀请人，被邀请人UUID，数据签名。防止接口被发现刷接口。",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "提交成功邀请消息",
+                "parameters": [
+                    {
+                        "description": "参数列表",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.UserSharePostRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/signday": {
+            "get": {
+                "description": "返回操作结果",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "签到"
+                ],
+                "summary": "用户签到",
+                "responses": {}
+            }
+        },
+        "/api/user/sms": {
+            "post": {
+                "description": "- 用户提交建议",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "用户发送短信验证码",
+                "parameters": [
+                    {
+                        "description": "参数",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.UserSmsRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/vod/history/add": {
+            "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "创建视频播放记录，单用户与单视频唯一。",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "长视频"
+                ],
+                "summary": "创建播放记录",
+                "parameters": [
+                    {
+                        "description": "参数列表",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.UserVodHistroyAddRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/vod/history/delete": {
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "删除播放记录 id 为播放记录id id=0 则为 删除所有",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "长视频"
+                ],
+                "summary": "删除播放记录",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "删除播放历史的id",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/vod/history/list": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "创建视频播放记录，单用户与单视频唯一。",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "长视频"
+                ],
+                "summary": "获取播放记录",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/vod/star/add": {
+            "put": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "创建视频播放记录，单用户与单视频唯一。",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "长视频"
+                ],
+                "summary": "创建收藏记录",
+                "parameters": [
+                    {
+                        "description": "参数列表",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.UserVodStarAddRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/vod/star/delete": {
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "创建视频播放记录，单用户与单视频唯一。",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "长视频"
+                ],
+                "summary": "删除收藏列表",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "删除播放历史的id",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "删除收藏的 vod id",
+                        "name": "vod_id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/vod/star/list": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "获取某个用户的收藏列表",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "长视频"
+                ],
+                "summary": "获取收藏记录",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/vip/list": {
+            "get": {
+                "description": "返回VIP列表数据",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "VIP"
+                ],
+                "summary": "VIP列表数据",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "name": "onStatus",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/vip/unlock": {
+            "post": {
+                "description": "解锁一个新的视频VIP",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "VIP"
+                ],
+                "summary": "解锁新的VIP",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "要解锁的VIPid",
+                        "name": "vipid",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/vlog/list": {
+            "get": {
+                "description": "返回短视频列表",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "短视频"
+                ],
+                "summary": "短视频列表",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "name": "after_create_time",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "appId",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "detail",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "matchid",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "是否自己发布的接口区分参数 多查几个状态 0 1",
+                        "name": "self",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "star",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "time",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "top",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "topicid",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "type",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "user_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "userput",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "wd",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/vod/24upload": {
+            "get": {
+                "description": "24小时上传的视频数量",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "长视频"
+                ],
+                "summary": "24小时上传的视频数量",
+                "responses": {}
+            }
+        },
+        "/api/vod/clever": {
+            "get": {
+                "description": "返回视频详情数据",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "长视频"
+                ],
+                "summary": "视频搜索",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "视频搜索文字",
+                        "name": "page",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "视频搜索文字",
+                        "name": "limit",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "视频搜索文字",
+                        "name": "wd",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/vod/hotspot": {
+            "get": {
+                "description": "根据type统计各种播放热榜100条",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "长视频"
+                ],
+                "summary": "播放热榜",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "type： day 当天热榜1小时更新,week 一周热榜,month 月榜，own 总榜",
+                        "name": "type",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/vod/index": {
+            "get": {
+                "description": "返回推荐的标签列表",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "长视频"
+                ],
+                "summary": "视频首页推荐",
+                "responses": {}
+            }
+        },
+        "/api/vod/info": {
+            "get": {
+                "description": "返回视频详情数据",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "长视频"
+                ],
+                "summary": "视频详情",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "视频ID",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/vod/list": {
+            "get": {
+                "description": "返回视频列表数据",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "长视频"
+                ],
+                "summary": "视频列表",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "name": "after_create_time",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "appId",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "job_status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "csv",
+                        "name": "labels",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "番号",
+                        "name": "number",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "title",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "topicid",
+                        "in": "query"
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "csv",
+                        "name": "types",
+                        "in": "query"
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "csv",
+                        "name": "users",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/vod/list/follow": {
+            "get": {
+                "description": "返回视频列表数据",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "长视频"
+                ],
+                "summary": "关注的视频列表",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "name": "after_create_time",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "appId",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "job_status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "csv",
+                        "name": "labels",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "番号",
+                        "name": "number",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "order",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "status",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "name": "title",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "name": "topicid",
+                        "in": "query"
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "csv",
+                        "name": "types",
+                        "in": "query"
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "collectionFormat": "csv",
+                        "name": "users",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/vod/recommend": {
+            "get": {
+                "description": "返回视频详情数据",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "长视频"
+                ],
+                "summary": "视频详情推荐",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "视频ID",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/vod/type": {
+            "get": {
+                "description": "返回视频分类数据",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "长视频"
+                ],
+                "summary": "视频分类",
+                "responses": {}
+            }
+        },
+        "/api/vodlabel/all": {
+            "get": {
+                "description": "返回视频标签数据",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "长视频"
+                ],
+                "summary": "全部标签",
+                "responses": {}
+            }
+        },
+        "/util/cache": {
+            "get": {
+                "description": "获取redis的key",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "工具"
+                ],
+                "summary": "获取数据",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "查询IP地址",
+                        "name": "name",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/util.ModelCaptcha"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "redis临时存储数据",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "工具"
+                ],
+                "summary": "存储数据",
+                "parameters": [
+                    {
+                        "description": "参数列表",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/util.CachePost"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/util/captcha": {
+            "get": {
+                "description": "返回base64验证码,与验证码id。",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "工具"
+                ],
+                "summary": "生成验证码",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/util.ModelCaptcha"
+                        }
+                    }
+                }
+            }
+        },
+        "/util/ip": {
+            "get": {
+                "description": "查询IP信息",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "工具"
+                ],
+                "summary": "查询IP信息",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "查询IP地址",
+                        "name": "addr",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/util/ping": {
+            "get": {
+                "description": "检查服务器健康状态",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "工具"
+                ],
+                "summary": "检查服务健康",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "api.UserBlogStarAddRequest": {
+            "type": "object",
+            "properties": {
+                "blog_id": {
+                    "type": "integer"
+                },
+                "vlog_id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "api.UserEditRequest": {
+            "type": "object",
+            "properties": {
+                "birthday": {
+                    "type": "string"
+                },
+                "gender": {
+                    "type": "string"
+                },
+                "introduction": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "api.UserFollowAddRequest": {
+            "type": "object",
+            "properties": {
+                "follow_id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "api.UserLoginRequest": {
+            "type": "object",
+            "properties": {
+                "captcha": {
+                    "type": "string"
+                },
+                "captchaId": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                }
+            }
+        },
+        "api.UserRegisterRequest": {
+            "type": "object",
+            "properties": {
+                "captcha": {
+                    "type": "string"
+                },
+                "captchaId": {
+                    "type": "string"
+                },
+                "invitecode": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "verification": {
+                    "type": "string"
+                }
+            }
+        },
+        "api.UserSeximgStarAddRequest": {
+            "type": "object",
+            "properties": {
+                "seximg_id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "api.UserSexnovelHistroyAddRequest": {
+            "type": "object",
+            "properties": {
+                "sexnovel_id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "api.UserSexnovelStarAddRequest": {
+            "type": "object",
+            "properties": {
+                "sexnovel_id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "api.UserSharePostRequest": {
+            "type": "object",
+            "properties": {
+                "accessKey": {
+                    "type": "string"
+                },
+                "deviceID": {
+                    "type": "string"
+                },
+                "shareUserID": {
+                    "type": "integer"
+                }
+            }
+        },
+        "api.UserSmsRequest": {
+            "type": "object",
+            "properties": {
+                "captcha": {
+                    "type": "string"
+                },
+                "captchaId": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                }
+            }
+        },
+        "api.UserVodHistroyAddRequest": {
+            "type": "object",
+            "properties": {
+                "vod_id": {
+                    "type": "integer"
+                },
+                "vod_time": {
+                    "type": "integer"
+                }
+            }
+        },
+        "api.UserVodStarAddRequest": {
+            "type": "object",
+            "properties": {
+                "vod_id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "util.CachePost": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "sec": {
+                    "type": "integer"
+                }
+            }
+        },
+        "util.ModelCaptcha": {
+            "type": "object",
+            "properties": {
+                "captchaId": {
+                    "type": "string"
+                },
+                "captchaUrl": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "ApiKeyAuth": {
+            "type": "apiKey",
+            "name": "x-token",
+            "in": "header"
+        }
+    }
+}

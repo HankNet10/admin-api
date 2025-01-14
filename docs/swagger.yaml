@@ -1,0 +1,1489 @@
+definitions:
+  api.UserBlogStarAddRequest:
+    properties:
+      blog_id:
+        type: integer
+      vlog_id:
+        type: integer
+    type: object
+  api.UserEditRequest:
+    properties:
+      birthday:
+        type: string
+      gender:
+        type: string
+      introduction:
+        type: string
+      name:
+        type: string
+    type: object
+  api.UserFollowAddRequest:
+    properties:
+      follow_id:
+        type: integer
+    type: object
+  api.UserLoginRequest:
+    properties:
+      captcha:
+        type: string
+      captchaId:
+        type: string
+      password:
+        type: string
+      phone:
+        type: string
+    type: object
+  api.UserRegisterRequest:
+    properties:
+      captcha:
+        type: string
+      captchaId:
+        type: string
+      invitecode:
+        type: string
+      password:
+        type: string
+      phone:
+        type: string
+      verification:
+        type: string
+    type: object
+  api.UserSeximgStarAddRequest:
+    properties:
+      seximg_id:
+        type: integer
+    type: object
+  api.UserSexnovelHistroyAddRequest:
+    properties:
+      sexnovel_id:
+        type: integer
+    type: object
+  api.UserSexnovelStarAddRequest:
+    properties:
+      sexnovel_id:
+        type: integer
+    type: object
+  api.UserSharePostRequest:
+    properties:
+      accessKey:
+        type: string
+      deviceID:
+        type: string
+      shareUserID:
+        type: integer
+    type: object
+  api.UserSmsRequest:
+    properties:
+      captcha:
+        type: string
+      captchaId:
+        type: string
+      phone:
+        type: string
+    type: object
+  api.UserVodHistroyAddRequest:
+    properties:
+      vod_id:
+        type: integer
+      vod_time:
+        type: integer
+    type: object
+  api.UserVodStarAddRequest:
+    properties:
+      vod_id:
+        type: integer
+    type: object
+  util.CachePost:
+    properties:
+      data:
+        type: string
+      name:
+        type: string
+      sec:
+        type: integer
+    type: object
+  util.ModelCaptcha:
+    properties:
+      captchaId:
+        type: string
+      captchaUrl:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /api//sexnovel/chapte/list:
+    get:
+      parameters:
+      - in: query
+        name: id
+        type: integer
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: pid
+        type: integer
+      - in: query
+        name: title
+        type: string
+      responses: {}
+      summary: 小说章节列表
+      tags:
+      - 小说
+  /api/adclick:
+    get:
+      consumes:
+      - application/json
+      description: 提交广告的点击数量
+      parameters:
+      - description: 广告ID
+        in: query
+        name: id
+        required: true
+        type: integer
+      responses: {}
+      summary: 提交统计
+      tags:
+      - 广告
+  /api/ads:
+    get:
+      consumes:
+      - application/json
+      description: 返回广告列表数据
+      responses: {}
+      summary: 广告列表
+      tags:
+      - 广告
+  /api/blog/comment/add:
+    post:
+      consumes:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 发布评论
+  /api/blog/comment/list:
+    get:
+      parameters:
+      - in: query
+        name: appid
+        type: integer
+      - in: query
+        name: blog_id
+        type: integer
+      - in: query
+        name: id
+        type: integer
+      - in: query
+        name: ip
+        type: string
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: order
+        type: string
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: parent_id
+        type: integer
+      - in: query
+        name: seximg_id
+        type: integer
+      - in: query
+        name: type
+        type: integer
+      - in: query
+        name: userid
+        type: string
+      - in: query
+        name: vlog_id
+        type: integer
+      - in: query
+        name: vod_id
+        type: integer
+      responses: {}
+      summary: 获取视频评论
+  /api/blog/info:
+    get:
+      consumes:
+      - application/json
+      description: 返回图文详情数据
+      parameters:
+      - description: 视频ID
+        in: query
+        name: id
+        required: true
+        type: integer
+      responses: {}
+      summary: 图文详情
+      tags:
+      - 图文
+  /api/cdnhost:
+    get:
+      consumes:
+      - application/json
+      description: '- 注意不要配置敏感信息'
+      responses: {}
+      summary: cdn加速域名配置
+      tags:
+      - 配置
+  /api/seximg/info:
+    get:
+      consumes:
+      - application/json
+      description: 返回色图详情数据
+      parameters:
+      - description: 色图详情的id
+        in: query
+        name: id
+        required: true
+        type: string
+      responses: {}
+      summary: 色图详情
+      tags:
+      - 色图
+  /api/seximg/list:
+    get:
+      parameters:
+      - in: query
+        name: after_create_time
+        type: string
+      - in: query
+        name: appId
+        type: integer
+      - in: query
+        name: id
+        type: integer
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: order
+        type: string
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: status
+        type: integer
+      - in: query
+        name: time
+        type: string
+      - in: query
+        name: title
+        type: string
+      - in: query
+        name: top
+        type: integer
+      - in: query
+        name: typeid
+        type: integer
+      - in: query
+        name: wd
+        type: string
+      responses: {}
+      summary: 色图列表
+      tags:
+      - 色图
+  /api/seximgtype/list:
+    get:
+      parameters:
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      responses: {}
+      summary: 色图分类列表
+      tags:
+      - 色图
+  /api/sexnovel/content/info:
+    get:
+      consumes:
+      - application/json
+      description: 返回小说内容数据
+      parameters:
+      - description: 小说内容的章节id
+        in: query
+        name: id
+        required: true
+        type: string
+      responses: {}
+      summary: 小说内容
+      tags:
+      - 小说
+  /api/sexnovel/info:
+    get:
+      consumes:
+      - application/json
+      description: 返回小说详情数据
+      parameters:
+      - description: 小说详情的id
+        in: query
+        name: id
+        required: true
+        type: string
+      responses: {}
+      summary: 小说详情
+      tags:
+      - 小说
+  /api/sexnovel/label:
+    get:
+      consumes:
+      - application/json
+      description: 返回推荐的标签列表
+      responses: {}
+      summary: 小说推荐
+      tags:
+      - 小说
+  /api/sexnovel/list:
+    get:
+      parameters:
+      - in: query
+        name: appId
+        type: integer
+      - in: query
+        name: id
+        type: integer
+      - in: query
+        name: labelsId
+        type: integer
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: order
+        type: string
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: status
+        type: integer
+      - in: query
+        name: title
+        type: string
+      - in: query
+        name: top
+        type: integer
+      - in: query
+        name: typeid
+        type: integer
+      responses: {}
+      summary: 小说列表
+      tags:
+      - 小说
+  /api/sexnoveltype/list:
+    get:
+      responses: {}
+      summary: 小说分类列表
+      tags:
+      - 小说
+  /api/suggest/add:
+    post:
+      consumes:
+      - application/json
+      description: '- 用户提交建议'
+      parameters:
+      - description: suggest
+        in: body
+        name: suggest
+        required: true
+        schema:
+          type: string
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 用户提交建议
+      tags:
+      - 用户
+  /api/user/actor:
+    get:
+      consumes:
+      - application/json
+      description: 返回用户信息
+      parameters:
+      - in: query
+        name: denycomment
+        type: integer
+      - in: query
+        name: id
+        type: integer
+      - in: query
+        name: ip
+        type: string
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: name
+        type: string
+      - in: query
+        name: order
+        type: string
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: phone
+        type: string
+      - in: query
+        name: type
+        type: string
+      responses: {}
+      summary: 女优列表
+      tags:
+      - 用户
+  /api/user/blog/star/add:
+    put:
+      consumes:
+      - application/json
+      description: 创建视频播放记录，单用户与单视频唯一。
+      parameters:
+      - description: 参数列表
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/api.UserBlogStarAddRequest'
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 创建收藏记录
+      tags:
+      - 图文
+  /api/user/blog/star/delete:
+    delete:
+      consumes:
+      - application/json
+      description: 创建视频播放记录，单用户与单视频唯一。
+      parameters:
+      - description: 删除播放历史的id
+        in: query
+        name: id
+        required: true
+        type: string
+      - description: 删除收藏的 blog id
+        in: query
+        name: blog_id
+        required: true
+        type: string
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 删除收藏列表
+      tags:
+      - 图文
+  /api/user/blog/star/list:
+    get:
+      consumes:
+      - application/json
+      description: 获取某个用户的点赞记录
+      parameters:
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: type
+        type: integer
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 获取点赞记录
+  /api/user/edit:
+    put:
+      consumes:
+      - application/json
+      description: '- 修改用户信息'
+      parameters:
+      - description: 参数列表
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/api.UserEditRequest'
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 修改用户
+      tags:
+      - 用户
+  /api/user/follow:
+    get:
+      consumes:
+      - application/json
+      description: 返回用户信息
+      parameters:
+      - description: 我关注的用户
+        in: query
+        name: follow_id
+        type: integer
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      - description: 关注我的用户
+        in: query
+        name: user_id
+        type: integer
+      responses: {}
+      summary: 我关注的，关注我的用户列表
+      tags:
+      - 用户
+  /api/user/follow/add:
+    put:
+      consumes:
+      - application/json
+      description: 关注其他用户
+      parameters:
+      - description: 参数列表
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/api.UserFollowAddRequest'
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 关注其他用户
+      tags:
+      - 用户
+  /api/user/follow/delete:
+    delete:
+      consumes:
+      - application/json
+      description: 返回用户信息
+      parameters:
+      - description: 参数列表
+        in: query
+        name: id
+        required: true
+        type: integer
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 用户列表
+      tags:
+      - 用户
+  /api/user/info:
+    get:
+      consumes:
+      - application/json
+      description: '- 用户详细信息'
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 用户详情
+      tags:
+      - 用户
+  /api/user/list:
+    get:
+      consumes:
+      - application/json
+      description: 返回用户信息
+      parameters:
+      - in: query
+        name: denycomment
+        type: integer
+      - in: query
+        name: id
+        type: integer
+      - in: query
+        name: ip
+        type: string
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: name
+        type: string
+      - in: query
+        name: order
+        type: string
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: phone
+        type: string
+      - in: query
+        name: type
+        type: string
+      responses: {}
+      summary: 搜索用户列表
+      tags:
+      - 用户
+  /api/user/login:
+    post:
+      consumes:
+      - application/json
+      description: '- 用户登录'
+      parameters:
+      - description: 参数列表
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/api.UserLoginRequest'
+      responses: {}
+      summary: 用户登录
+      tags:
+      - 用户
+  /api/user/newusershare:
+    get:
+      consumes:
+      - application/json
+      description: 添加用户分享记录
+      responses: {}
+      summary: 添加用户分享记录
+      tags:
+      - 添加用户分享记录
+  /api/user/other:
+    get:
+      consumes:
+      - application/json
+      description: '- 查看其他的用户详细信息 - 可以登录也可以不登陆'
+      parameters:
+      - description: 参数列表
+        in: query
+        name: id
+        required: true
+        type: integer
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 其他用户详情
+      tags:
+      - 用户
+  /api/user/register:
+    post:
+      consumes:
+      - application/json
+      description: '- 注册用户信息'
+      responses: {}
+      summary: 注册用户
+      tags:
+      - 用户
+  /api/user/resetpasswd:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 参数列表
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/api.UserRegisterRequest'
+      responses: {}
+      summary: 重设密码
+      tags:
+      - 用户
+  /api/user/seximg/star/add:
+    put:
+      consumes:
+      - application/json
+      description: 创建点赞收藏记录
+      parameters:
+      - description: 参数列表
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/api.UserSeximgStarAddRequest'
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 创建点赞收藏记录
+      tags:
+      - 色图
+  /api/user/seximg/star/delete:
+    delete:
+      consumes:
+      - application/json
+      description: 删除点赞收藏记录，单用户与单色图唯一。
+      parameters:
+      - description: 删除点赞收藏的 seximg id
+        in: query
+        name: seximg_id
+        required: true
+        type: string
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 删除点赞收藏列表
+      tags:
+      - 色图
+  /api/user/seximg/star/isLike:
+    get:
+      description: 返回isLike
+      parameters:
+      - description: 色图的id
+        in: query
+        name: seximg_id
+        required: true
+        type: string
+      responses: {}
+      summary: 是否点赞收藏
+      tags:
+      - 色图
+  /api/user/seximg/star/list:
+    get:
+      consumes:
+      - application/json
+      description: 获取某个用户的点赞收藏记录
+      parameters:
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: type
+        type: integer
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 获取点赞收藏记录
+      tags:
+      - 色图
+  /api/user/sexnovel/history/add:
+    put:
+      consumes:
+      - application/json
+      description: 创建小说观看记录，单用户与单小说唯一。
+      parameters:
+      - description: 参数列表
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/api.UserSexnovelHistroyAddRequest'
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 创建小说观看记录
+      tags:
+      - 小说
+  /api/user/sexnovel/history/delete:
+    delete:
+      consumes:
+      - application/json
+      description: 删除小说观看记录 id 为观看记录id:'1,2,3' id=0 则为 删除所有
+      parameters:
+      - description: 删除观看历史的id
+        in: query
+        name: id
+        required: true
+        type: string
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 删除小说观看记录
+      tags:
+      - 小说
+  /api/user/sexnovel/history/list:
+    get:
+      consumes:
+      - application/json
+      description: 创建小说观看记录，单用户与单小说唯一。
+      parameters:
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 获取小说观看记录
+      tags:
+      - 小说
+  /api/user/sexnovel/star/add:
+    put:
+      consumes:
+      - application/json
+      description: 创建点赞收藏记录
+      parameters:
+      - description: 参数列表
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/api.UserSexnovelStarAddRequest'
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 创建点赞收藏记录
+      tags:
+      - 小说
+  /api/user/sexnovel/star/delete:
+    delete:
+      consumes:
+      - application/json
+      description: 创建小说点赞收藏记录，单用户与单小说唯一。
+      parameters:
+      - description: 删除点赞收藏的 sexnovel id
+        in: query
+        name: sexnovel_id
+        required: true
+        type: string
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 删除点赞收藏列表
+      tags:
+      - 小说
+  /api/user/sexnovel/star/isLike:
+    get:
+      description: 返回isLike
+      parameters:
+      - description: 小说的id
+        in: query
+        name: sexnovel_id
+        required: true
+        type: string
+      responses: {}
+      summary: 是否点赞收藏
+      tags:
+      - 小说
+  /api/user/sexnovel/star/list:
+    get:
+      consumes:
+      - application/json
+      description: 获取某个用户的点赞收藏记录
+      parameters:
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: type
+        type: integer
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 获取点赞收藏记录
+      tags:
+      - 小说
+  /api/user/share:
+    get:
+      consumes:
+      - application/json
+      description: 我的邀请列表或邀请的设备列表
+      parameters:
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: order
+        type: string
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: user_id
+        type: integer
+      responses: {}
+      summary: 老版本分享 已过期 不处理 不可删除
+      tags:
+      - 用户
+    post:
+      consumes:
+      - application/json
+      description: '- 提交成功邀请消息 邀请人，被邀请人UUID，数据签名。防止接口被发现刷接口。'
+      parameters:
+      - description: 参数列表
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/api.UserSharePostRequest'
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 提交成功邀请消息
+      tags:
+      - 用户
+  /api/user/signday:
+    get:
+      consumes:
+      - application/json
+      description: 返回操作结果
+      responses: {}
+      summary: 用户签到
+      tags:
+      - 签到
+  /api/user/sms:
+    post:
+      consumes:
+      - application/json
+      description: '- 用户提交建议'
+      parameters:
+      - description: 参数
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/api.UserSmsRequest'
+      responses: {}
+      summary: 用户发送短信验证码
+      tags:
+      - 用户
+  /api/user/vod/history/add:
+    put:
+      consumes:
+      - application/json
+      description: 创建视频播放记录，单用户与单视频唯一。
+      parameters:
+      - description: 参数列表
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/api.UserVodHistroyAddRequest'
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 创建播放记录
+      tags:
+      - 长视频
+  /api/user/vod/history/delete:
+    delete:
+      consumes:
+      - application/json
+      description: 删除播放记录 id 为播放记录id id=0 则为 删除所有
+      parameters:
+      - description: 删除播放历史的id
+        in: query
+        name: id
+        required: true
+        type: string
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 删除播放记录
+      tags:
+      - 长视频
+  /api/user/vod/history/list:
+    get:
+      consumes:
+      - application/json
+      description: 创建视频播放记录，单用户与单视频唯一。
+      parameters:
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 获取播放记录
+      tags:
+      - 长视频
+  /api/user/vod/star/add:
+    put:
+      consumes:
+      - application/json
+      description: 创建视频播放记录，单用户与单视频唯一。
+      parameters:
+      - description: 参数列表
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/api.UserVodStarAddRequest'
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 创建收藏记录
+      tags:
+      - 长视频
+  /api/user/vod/star/delete:
+    delete:
+      consumes:
+      - application/json
+      description: 创建视频播放记录，单用户与单视频唯一。
+      parameters:
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      - description: 删除播放历史的id
+        in: query
+        name: id
+        required: true
+        type: string
+      - description: 删除收藏的 vod id
+        in: query
+        name: vod_id
+        required: true
+        type: string
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 删除收藏列表
+      tags:
+      - 长视频
+  /api/user/vod/star/list:
+    get:
+      consumes:
+      - application/json
+      description: 获取某个用户的收藏列表
+      parameters:
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: page
+        type: integer
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: 获取收藏记录
+      tags:
+      - 长视频
+  /api/vip/list:
+    get:
+      consumes:
+      - application/json
+      description: 返回VIP列表数据
+      parameters:
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: onStatus
+        type: boolean
+      - in: query
+        name: order
+        type: string
+      - in: query
+        name: page
+        type: integer
+      responses: {}
+      summary: VIP列表数据
+      tags:
+      - VIP
+  /api/vip/unlock:
+    post:
+      consumes:
+      - application/json
+      description: 解锁一个新的视频VIP
+      parameters:
+      - description: 要解锁的VIPid
+        in: query
+        name: vipid
+        required: true
+        type: integer
+      responses: {}
+      summary: 解锁新的VIP
+      tags:
+      - VIP
+  /api/vlog/list:
+    get:
+      consumes:
+      - application/json
+      description: 返回短视频列表
+      parameters:
+      - in: query
+        name: after_create_time
+        type: string
+      - in: query
+        name: appId
+        type: integer
+      - in: query
+        name: detail
+        type: string
+      - in: query
+        name: id
+        type: integer
+      - in: query
+        name: limit
+        type: integer
+      - in: query
+        name: matchid
+        type: integer
+      - in: query
+        name: order
+        type: string
+      - in: query
+        name: page
+        type: integer
+      - description: 是否自己发布的接口区分参数 多查几个状态 0 1
+        in: query
+        name: self
+        type: integer
+      - in: query
+        name: star
+        type: integer
+      - in: query
+        name: status
+        type: integer
+      - in: query
+        name: time
+        type: string
+      - in: query
+        name: top
+        type: integer
+      - in: query
+        name: topicid
+        type: integer
+      - in: query
+        name: type
+        type: string
+      - in: query
+        name: user_id
+        type: string
+      - in: query
+        name: userput
+        type: integer
+      - in: query
+        name: wd
+        type: string
+      responses: {}
+      summary: 短视频列表
+      tags:
+      - 短视频
+  /api/vod/24upload:
+    get:
+      consumes:
+      - application/json
+      description: 24小时上传的视频数量
+      responses: {}
+      summary: 24小时上传的视频数量
+      tags:
+      - 长视频
+  /api/vod/clever:
+    get:
+      consumes:
+      - application/json
+      description: 返回视频详情数据
+      parameters:
+      - description: 视频搜索文字
+        in: query
+        name: page
+        required: true
+        type: integer
+      - description: 视频搜索文字
+        in: query
+        name: limit
+        required: true
+        type: integer
+      - description: 视频搜索文字
+        in: query
+        name: wd
+        required: true
+        type: string
+      responses: {}
+      summary: 视频搜索
+      tags:
+      - 长视频
+  /api/vod/hotspot:
+    get:
+      consumes:
+      - application/json
+      description: 根据type统计各种播放热榜100条
+      parameters:
+      - description: type： day 当天热榜1小时更新,week 一周热榜,month 月榜，own 总榜
+        in: query
+        name: type
+        required: true
+        type: string
+      responses: {}
+      summary: 播放热榜
+      tags:
+      - 长视频
+  /api/vod/index:
+    get:
+      consumes:
+      - application/json
+      description: 返回推荐的标签列表
+      responses: {}
+      summary: 视频首页推荐
+      tags:
+      - 长视频
+  /api/vod/info:
+    get:
+      consumes:
+      - application/json
+      description: 返回视频详情数据
+      parameters:
+      - description: 视频ID
+        in: query
+        name: id
+        required: true
+        type: integer
+      responses: {}
+      summary: 视频详情
+      tags:
+      - 长视频
+  /api/vod/list:
+    get:
+      consumes:
+      - application/json
+      description: 返回视频列表数据
+      parameters:
+      - in: query
+        name: after_create_time
+        type: string
+      - in: query
+        name: appId
+        type: integer
+      - in: query
+        name: id
+        type: integer
+      - in: query
+        name: job_status
+        type: string
+      - collectionFormat: csv
+        in: query
+        items:
+          type: string
+        name: labels
+        type: array
+      - in: query
+        name: limit
+        type: integer
+      - description: 番号
+        in: query
+        name: number
+        type: string
+      - in: query
+        name: order
+        type: string
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: status
+        type: integer
+      - in: query
+        name: title
+        type: string
+      - in: query
+        name: topicid
+        type: integer
+      - collectionFormat: csv
+        in: query
+        items:
+          type: string
+        name: types
+        type: array
+      - collectionFormat: csv
+        in: query
+        items:
+          type: string
+        name: users
+        type: array
+      responses: {}
+      summary: 视频列表
+      tags:
+      - 长视频
+  /api/vod/list/follow:
+    get:
+      consumes:
+      - application/json
+      description: 返回视频列表数据
+      parameters:
+      - in: query
+        name: after_create_time
+        type: string
+      - in: query
+        name: appId
+        type: integer
+      - in: query
+        name: id
+        type: integer
+      - in: query
+        name: job_status
+        type: string
+      - collectionFormat: csv
+        in: query
+        items:
+          type: string
+        name: labels
+        type: array
+      - in: query
+        name: limit
+        type: integer
+      - description: 番号
+        in: query
+        name: number
+        type: string
+      - in: query
+        name: order
+        type: string
+      - in: query
+        name: page
+        type: integer
+      - in: query
+        name: status
+        type: integer
+      - in: query
+        name: title
+        type: string
+      - in: query
+        name: topicid
+        type: integer
+      - collectionFormat: csv
+        in: query
+        items:
+          type: string
+        name: types
+        type: array
+      - collectionFormat: csv
+        in: query
+        items:
+          type: string
+        name: users
+        type: array
+      responses: {}
+      summary: 关注的视频列表
+      tags:
+      - 长视频
+  /api/vod/recommend:
+    get:
+      consumes:
+      - application/json
+      description: 返回视频详情数据
+      parameters:
+      - description: 视频ID
+        in: query
+        name: id
+        required: true
+        type: integer
+      responses: {}
+      summary: 视频详情推荐
+      tags:
+      - 长视频
+  /api/vod/type:
+    get:
+      consumes:
+      - application/json
+      description: 返回视频分类数据
+      responses: {}
+      summary: 视频分类
+      tags:
+      - 长视频
+  /api/vodlabel/all:
+    get:
+      consumes:
+      - application/json
+      description: 返回视频标签数据
+      responses: {}
+      summary: 全部标签
+      tags:
+      - 长视频
+  /util/cache:
+    get:
+      consumes:
+      - application/json
+      description: 获取redis的key
+      parameters:
+      - description: 查询IP地址
+        in: query
+        name: name
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/util.ModelCaptcha'
+      summary: 获取数据
+      tags:
+      - 工具
+    post:
+      consumes:
+      - application/json
+      description: redis临时存储数据
+      parameters:
+      - description: 参数列表
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/util.CachePost'
+      produces:
+      - application/json
+      responses: {}
+      summary: 存储数据
+      tags:
+      - 工具
+  /util/captcha:
+    get:
+      consumes:
+      - application/json
+      description: 返回base64验证码,与验证码id。
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/util.ModelCaptcha'
+      summary: 生成验证码
+      tags:
+      - 工具
+  /util/ip:
+    get:
+      consumes:
+      - application/json
+      description: 查询IP信息
+      parameters:
+      - description: 查询IP地址
+        in: query
+        name: addr
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: 查询IP信息
+      tags:
+      - 工具
+  /util/ping:
+    get:
+      consumes:
+      - application/json
+      description: 检查服务器健康状态
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: 检查服务健康
+      tags:
+      - 工具
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: x-token
+    type: apiKey
+swagger: "2.0"
